@@ -1,0 +1,33 @@
+<style>
+  a {
+    font-size: 2em;
+    margin: 25px;
+    padding: 30px;
+    border: 1px solid darkgray;
+    background-color: lightgray;
+    display: inline-block;
+  }
+  .on {
+    background-color: yellow;
+  }
+  .off {
+    background-color: magenta;
+  }
+</style>
+
+
+<h2>Welcome</h2>
+<a class="<%= status['yellow'] == 1 ? 'on' : '' %>" href='/led?c=yellow&s=on'>Yellow ON</a>
+<a class="<%= status['yellow'] == 1 ? '' : 'off' %>" href='/led?c=yellow&s=off'>Yellow OFF</a><br>
+
+<a class="<%= status['red'] == 1 ? 'on' : '' %>" href='/led?c=red&s=on'>Red ON</a>
+<a class="<%= status['red'] == 1 ? '' : 'off' %>" href='/led?c=red&s=off'>Red OFF</a><br>
+
+<a class="<%= status['green'] == 1 ? 'on' : '' %>" href='/led?c=green&s=on'>Green ON</a>
+<a class="<%= status['green'] == 1 ? '' : 'off' %>" href='/led?c=green&s=off'>Green OFF</a><br>
+
+<a class="<%= status['blue'] == 1 ? 'on' : '' %>" href='/led?c=blue&s=on'>Blue ON</a>
+<a class="<%= status['blue'] == 1 ? '' : 'off' %>" href='/led?c=blue&s=off'>Blue OFF</a><br>
+
+<a class="<%= status.values.uniq == [1] ? 'on' : '' %>" href='/led?c=all&s=on'>All ON</a>
+<a class="<%= status.values.uniq == [0] ? 'off' : '' %>" href='/led?c=all&s=off'>All OFF</a> 
